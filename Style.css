@@ -28,7 +28,7 @@ li a:hover:not(.active) {
     color: white;
 }
 .Header{
-	background-color: #E87B07;
+	background-color: #03759C;
 	color: white;
 	text-align: center;
 	padding: 5px;
@@ -42,6 +42,10 @@ li a:hover:not(.active) {
     float:left;
     padding:5px;
 
+}
+.Logo{
+     float:left;
+     padding:10px;
 }
 
 .Content{
