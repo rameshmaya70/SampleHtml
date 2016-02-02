@@ -14,15 +14,15 @@
 	 <div class = "nav"> 
 	 	
 			<ul>
-			  <li><a class="active" href="#home">Home</a></li>
-			  <li><a href="news.html">News</a></li>
-			  <li><a href="contact.html">Contact</a></li>
-			  <li><a href="About.html">About</a></li>
-			  <li><a href="form.html">Login</a></li>
+			  <li><a href="#" onclick="loadHome()">Home</a></li>
+			  <li><a href="#" onclick="loadNews()">News</a></li>
+			  <li><a href="#" onclick="loadContact()">Contact</a></li>
+			  <li><a href="#" onclick="loadAbout()">About</a></li>
+			  <li><a href="#" onclick="loadForm()" >Login</a></li>
 			</ul>
 
 	 </div>
-	 <div class = "Content">
+	 <div class = "Content" id = "Content">
 
 	 	<h2> Any device Compatiability</h2>
 
@@ -39,7 +39,31 @@
 	 <script>
 function openWin() {
     location.href = "form.html";
+};
+function loadNews(){
+	document.getElementById("Content").innerHTML='<object type="text/html" data="news.html" style="width:100%; height: 100%;"></object>';
+
+
+};
+
+function loadHome(){
+
+document.getElementById("Content").innerHTML='<object type="text/html" data="homeDiv.html" style="width:100%; height: 100%;"></object>';
 }
+
+function loadForm(){
+
+document.getElementById("Content").innerHTML='<object type="text/html" data="form.html" style="width:100%; height: 100%;"></object>';
+};
+
+function loadAbout(){
+
+document.getElementById("Content").innerHTML='<object type="text/html" data="About.html" style="width:100%; height: 100%;"></object>';
+};
+function loadContact(){
+	document.getElementById("Content").innerHTML='<object type="text/html" data="contact.html" style="width:100%; height: 100%;"></object>';
+
+};
 </script>
 
 	</body>

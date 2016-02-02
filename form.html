@@ -91,13 +91,17 @@ function validateForm() {
       return;
     }else{
         console.log("else part");
-       location.href = "ResultPage.html";
+       //location.href = "index.html";
+       document.getElementById("alert").innerHTML = "Registration Completed";
+       
+       document.getElementById("alert").style.fontSize = 30;
     }
 
     }
       else{
         console.log("else part");
-    	 location.href = "ResultPage.html";
+    	// location.href = "index.html";
+      document.getElementById("alert").innerHTML = "Registration Completed";
     }
      
     
