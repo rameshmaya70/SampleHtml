@@ -25,7 +25,12 @@
   <br>
   Reenter Password:<br>
   <input type="text" name="rePassword" >
-  <br><br>
+  <br>
+  Email:<br>
+  <input type="text" name="email" >
+  <br>
+
+  <br>
  
 </form> 
 
@@ -43,7 +48,7 @@ function validateForm() {
     var sex = document.forms["myForm"]["sex"].value;
     var password = document.forms["myForm"]["password"].value;
     var rePassword = document.forms["myForm"]["rePassword"].value;
-
+    var Email = document.forms["myForm"]["email"].value;
     var alertMsg = "";
     if (fname == null || fname == "") {
         document.getElementById("alert").innerHTML = "First Name must be filled out";
@@ -74,7 +79,24 @@ function validateForm() {
     }else if(rePassword != password){
     	document.getElementById("alert").innerHTML = "Password  should be same";
     	return;
+    }else if(Email == null || Email == null){
+      document.getElementById("alert").innerHTML = "Email  must be filled out";
+      return;
+    }else if(Email.length > 0){
+
+      var atpos = Email.indexOf("@");
+      var dotpos = Email.lastIndexOf(".");
+    if (atpos<1 || dotpos<atpos+2 || dotpos+2>=Email.length){
+      document.getElementById("alert").innerHTML = "Please enter valid email";
+      return;
     }else{
+        console.log("else part");
+       location.href = "ResultPage.html";
+    }
+
+    }
+      else{
+        console.log("else part");
     	 location.href = "ResultPage.html";
     }
      
