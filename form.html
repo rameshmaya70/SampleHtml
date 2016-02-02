@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="Form.css"></head>
+<body>
+
+	<p id = "alert" > </p>
+
+<form  name="myForm" action="action_page.php" onsubmit="validateForm()">
+  First name:<br>
+  <input type="text" name="fname">
+  <br>
+  Last name:<br>
+  <input type="text" name="lastname" >
+  <br>
+  Age:<br>
+  <input type="text" name="age" >
+  <br>
+  Sex:<br>
+  <input type="text" name="sex" >
+  <br>
+  Password:<br>
+  <input type="text" name="password" >
+  <br>
+  Reenter Password:<br>
+  <input type="text" name="rePassword" >
+  <br><br>
+ 
+</form> 
+
+<input type="button" onclick="validateForm()" value="Submit" class = "Submit">
+
+<p>If you click the "Submit" button, the form-data will be sent to a page called "action_page.php".</p>
+
+<p>Notice that the value of the "First name" field will not be submitted, because the input element does not have a name attribute.</p>
+
+<script type="text/javascript">
+function validateForm() {
+    var fname = document.forms["myForm"]["fname"].value;
+    var lname = document.forms["myForm"]["lastname"].value;
+    var age = document.forms["myForm"]["age"].value;
+    var sex = document.forms["myForm"]["sex"].value;
+    var password = document.forms["myForm"]["password"].value;
+    var rePassword = document.forms["myForm"]["rePassword"].value;
+
+    var alertMsg = "";
+    if (fname == null || fname == "") {
+        document.getElementById("alert").innerHTML = "First Name must be filled out";
+        return;
+      
+    }else if(lname == null || lname == ""){
+    	document.getElementById("alert").innerHTML = "Last Name must be filled out";
+    	return;
+
+    }else if(age == null || age == ""){
+
+    	document.getElementById("alert").innerHTML = "Age  must be filled out";
+    	return;
+    }
+    else if(sex == null || sex == ""){
+    	document.getElementById("alert").innerHTML = "Sex must be filled out";
+    	return;
+
+    }else if(password == null || password == ""){
+
+    	document.getElementById("alert").innerHTML = "Password  must be filled out";
+    	return;
+    }
+    else if(rePassword == null || rePassword == ""){
+
+    	document.getElementById("alert").innerHTML = "Re Enter your Password";
+    	return;
+    }else if(rePassword != password){
+    	document.getElementById("alert").innerHTML = "Password  should be same";
+    	return;
+    }else{
+    	 location.href = "ResultPage.html";
+    }
+     
+    
+}
+</script>
+
+</body>
+</html>
